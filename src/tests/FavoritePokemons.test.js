@@ -14,9 +14,9 @@ describe('Teste o componente FavoritePokemons.js', () => {
 
   test('Se é exibido todos os cards de pokémons favoritados', () => {
     const { history } = renderWithRouter(<App />);
-    const pokIdForFav = { Alakazam: 65 };
+    const pokemonIdToFav = { Alakazam: 65 };
 
-    Object.values(pokIdForFav).forEach((id) => {
+    Object.values(pokemonIdToFav).forEach((id) => {
       history.push(`/pokemons/${id}`);
       const starCheck = screen.getByRole('checkbox');
       userEvent.click(starCheck);
